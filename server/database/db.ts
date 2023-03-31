@@ -2,7 +2,6 @@ import { ConnectOptions, connect } from "mongoose";
 import Rol from "../models/rol.model";
 import { MONGO_URI } from "../libs/config";
 import { ServerApiVersion } from "mongodb";
-
 const db = async () => {
   try {
     const database = await connect(MONGO_URI,{

@@ -43,7 +43,10 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const serialized = cookie_1.default.serialize("token", token);
         res.cookie("token", serialized, {
             httpOnly: true,
+            secure: true,
+            sameSite: "none",
             maxAge: 1000 * 60 * 60 * 24,
+            domain: "app-notes-2j7i.onrender.com", // Dominio del sitio web
         });
         res.json(token);
     }
@@ -92,7 +95,10 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const serialized = cookie_1.default.serialize("token", token);
         res.cookie("token", serialized, {
             httpOnly: true,
+            secure: true,
+            sameSite: "none",
             maxAge: 1000 * 60 * 60 * 24,
+            domain: "app-notes-2j7i.onrender.com", // Dominio del sitio web
         });
         res.json(token);
     }
@@ -109,7 +115,7 @@ exports.logout = logout;
 // Define una función asíncrona para buscar un usuario por su ID y obtener el rol correspondiente
 const obtainRol = (usuarioId) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const rol = yield users_model_1.default.findById(usuarioId).populate('rolId');
+        const rol = yield users_model_1.default.findById(usuarioId).populate("rolId");
         return rol === null || rol === void 0 ? void 0 : rol.rolId.rol; // Imprime el nombre del rol
     }
     catch (error) {

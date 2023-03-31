@@ -6,7 +6,6 @@ dotenv.config()
 const port = process.env.PORT
 const mongoUri = process.env.MONGO_URI
 const secret = process.env.SECRET
-
 export const PORT =  port 
 export const MONGO_URI = mongoUri as string
 export const SECRET = secret as Secret
