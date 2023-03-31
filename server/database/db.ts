@@ -1,9 +1,16 @@
-import { connect } from "mongoose";
+import { ConnectOptions, connect } from "mongoose";
 import Rol from "../models/rol.model";
+import { MONGO_URI } from "../libs/config";
+import { ServerApiVersion } from "mongodb";
 
 const db = async () => {
   try {
-    const database = await connect("mongodb://127.0.0.1:27017/users");
+    const database = await connect(MONGO_URI,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      writeConcern: { w: 'majority' },
+      serverApi: ServerApiVersion.v1
+    } as ConnectOptions)
     console.log(`Datbase is connected in ${database.connection.name}`);
     // Buscamos los roles existentes
     const count = await Rol.countDocuments()

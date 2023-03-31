@@ -18,7 +18,7 @@ function FormPost() {
         <input type="text" id="title" {...register("title", { required: true })} />
         {errors.title && <span className="form--error">Title is required</span>}
       </div>
-      <button>Save</button>
+      <button>Save Post</button>
     </form>
   )
 }

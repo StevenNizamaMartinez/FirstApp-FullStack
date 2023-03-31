@@ -22,8 +22,9 @@ const AuthProvider = ({ children }) => {
       navigate("/profile")
     },
     onError: (error) => {
-      console.log(error);
-      toast.error("Error al iniciar sesion")
+      console.log(error.response.data);
+      if (!error.response.data) return toast.error("Error al iniciar sesion")
+      toast.error(error.response.data)
     }
   })
 
@@ -33,14 +34,14 @@ const AuthProvider = ({ children }) => {
     onSuccess: (data) => {
       toast.dismiss()
       console.log(data);
-      localStorage.setItem("token", data)
       setToken(data)
+      localStorage.setItem("token", data)
       toast.success("Usuario registrado con éxito")
       navigate("/profile")
     },
     onError: (error) => {
-      console.log(error);
-      toast.error("Error al registrar usuario")
+      if (!error.response.data) return toast.error("Error al registrar usuario")
+      toast.error(error.response.data)
     }
   })
 

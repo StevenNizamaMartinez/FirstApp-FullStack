@@ -1,8 +1,19 @@
 import React from 'react'
+import { NavLink,useNavigate } from 'react-router-dom'
 
 function PageNotFound() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(-1)
+  }
   return (
-    <main className='page--container'>PageNotFound</main>
+    <main className='notfound--container'>
+      <picture className='notfound'>
+        <img src="./notFound.svg" />
+        <h2>PAGE NOT FOUND !!!</h2>
+        <button onClick={handleClick}>Return</button>
+      </picture>
+    </main>
   )
 }
 

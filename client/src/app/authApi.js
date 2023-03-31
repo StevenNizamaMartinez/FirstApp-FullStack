@@ -14,6 +14,7 @@ export const registerRequest = async (data) => {
     const response = await app.post("/auth/register", data);
     return response.data;
   } catch (error) {
+    console.log("error en regiter");
     throw error;
   }
 }

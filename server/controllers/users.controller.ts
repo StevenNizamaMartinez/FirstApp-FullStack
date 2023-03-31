@@ -14,7 +14,6 @@ export const getUsers = async (req: Request, res: Response) => {
           email: user.email,
           rol: rol?.rolId.rol,
         };
-        console.log(newUser);
         return newUser;
       })
     );
@@ -25,7 +24,6 @@ export const getUsers = async (req: Request, res: Response) => {
 };
 
 export const getUser = async (req: Request, res: Response) => {
-  console.log(res.locals.user.id);
   try {
     const user = await Users.findById(res.locals.user.id);
     if (!user) return res.status(404).json("User not found");

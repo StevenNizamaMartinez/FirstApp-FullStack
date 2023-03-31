@@ -23,7 +23,7 @@ function FormLogin() {
         <input type="password" id="password" {...register("password", { required: true })} />
         {errors.password && <span className="form--error">Password is required</span>}
       </div>
-      <button>Save</button>
+      <button>Login</button>
     </form>
   )
 }

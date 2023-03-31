@@ -12,12 +12,12 @@ export const handleAuth = async (
   next: NextFunction
 ) => {
   const cookies = req.cookies;
-  if (!cookies.token) return res.status(401).json("Unauthorized");
+  if (!cookies.token) return res.status(401).json("Unauthorized cookies");
   const cookieParse = cookie.parse(cookies.token);
   const { token } = cookieParse;
   try {
     const decode = jwt.verify(token, SECRET);
-    if (!decode) return res.status(401).json("Unauthorized");
+    if (!decode) return res.status(401).json("Unauthorized decode");
     res.locals.user = decode;
     next();
   } catch (error) {

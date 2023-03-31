@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 
 //middlewares
 
-
 //routes
 app.use("/api/v1/auth", authRouter)
 app.use(handleAuth)

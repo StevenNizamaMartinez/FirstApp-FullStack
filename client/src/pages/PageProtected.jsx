@@ -9,6 +9,7 @@ function PageProtected() {
   const navigate = useNavigate()
   const {token } = useAuth()
   const { decodedToken,isExpired } = useJwt(token)
+  console.log(isExpired);
 
   useEffect(() => {
     if (isExpired) {
