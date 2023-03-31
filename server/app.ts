@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: "stevennizama-notes-app.netlify.app",
+    origin: "https://notes-app-stevennizama.netlify.app",
     credentials: true
 }));
 

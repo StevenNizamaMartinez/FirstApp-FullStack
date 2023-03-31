@@ -11,7 +11,7 @@ app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cors_1.default)({
-    origin: "stevennizama-notes-app.netlify.app",
+    origin: "https://notes-app-stevennizama.netlify.app",
     credentials: true
 }));
 exports.default = app;
