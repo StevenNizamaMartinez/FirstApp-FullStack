@@ -21,7 +21,6 @@ export const getPostRequest = async () => {
 export const getPostByUserIdRequest = async ({queryKey}) => {
 
   const id = queryKey[1];
-  console.log("peticion");
   try {
     const post = await app.get(`/post/${id}`);
     return post.data

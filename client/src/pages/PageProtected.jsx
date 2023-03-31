@@ -9,10 +9,10 @@ function PageProtected() {
   const navigate = useNavigate()
   const {token } = useAuth()
   const { decodedToken,isExpired } = useJwt(token)
-  console.log(isExpired);
 
   useEffect(() => {
     if (isExpired) {
+      console.log("Protected Routes");
       toast.error("Your session has expired")
       localStorage.removeItem("token")
       return navigate("/")
