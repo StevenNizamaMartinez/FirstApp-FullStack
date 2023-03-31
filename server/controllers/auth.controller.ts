@@ -39,7 +39,7 @@ export const login = async (req: Request, res: Response) => {
       secure: true, // Solo se establecerá en conexiones HTTPS
       sameSite: "none", // Configuración de SameSite en None
       maxAge: 1000 * 60 * 60 * 24,
-      domain: "stevennizama.onrender.com", // Dominio del sitio web
+      domain: "notes-app-stevennizama.netlify.app/", // Dominio del sitio web
     });
     res.json(token);
   } catch (error) {
@@ -92,7 +92,7 @@ export const register = async (req: Request, res: Response) => {
       secure: true, // Solo se establecerá en conexiones HTTPS
       sameSite: "none", // Configuración de SameSite en None
       maxAge: 1000 * 60 * 60 * 24,
-      domain: "stevennizama.onrender.com", // Dominio del sitio web
+      domain: "notes-app-stevennizama.netlify.app/", // Dominio del sitio web
     });
     res.json(token);
   } catch (error) {
