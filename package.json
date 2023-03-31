@@ -22,7 +22,7 @@
     "@types/node": "^18.15.11",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.2",
-    "@types/mongoose": "^5.11.97",
+    "@types/mongoose": "^5.11.97"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
