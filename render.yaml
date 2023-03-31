@@ -1,0 +1,6 @@
+version: 1
+build:
+  - command: npm install && npm run build
+  - dir: dist
+start:
+  command: node dist/index.js
