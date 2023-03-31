@@ -2,13 +2,14 @@ import { useContext, createContext, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast"
 import { useNavigate } from "react-router-dom";
-import { createPostRequest, deletePostRequest, getPostByIdRequest, getPostRequest, getPostsRequest, updatePostStatusRequest } from "../app/postApi";
+import { createPostRequest, deletePostRequest, getPostByUserIdRequest, getPostRequest, getPostsRequest, updatePostStatusRequest } from "../app/postApi";
 
 export const PostContext = createContext()
 
 const PostProvider = ({ children }) => {
   const queryClient = useQueryClient()
   const [post, setPost] = useState(null)
+  const [posts, setPosts] = useState(null)
   const navigate = useNavigate()
 
   const getPosts = () => {
@@ -17,6 +18,7 @@ const PostProvider = ({ children }) => {
       queryFn: getPostsRequest,
       onSuccess: (data) => {
         console.log(data)
+        setPosts(data)
       },
       onError: (error) => {
         console.log(error);
@@ -39,10 +41,10 @@ const PostProvider = ({ children }) => {
     return users
   }
 
-  const getPostById = (id) => {
+  const getPostByUserId = (id) => {
     const users = useQuery({
       queryKey: ["post",id],
-      queryFn: getPostByIdRequest,
+      queryFn: getPostByUserIdRequest,
       onSuccess: (data) => {
         setPost(data)
       },
@@ -104,7 +106,7 @@ const PostProvider = ({ children }) => {
 
 
   return (
-    <PostContext.Provider value={{ getPosts, getPost,getPostById, createPostMutation, deletePostMutation, updatePostStateMutation,post }}>
+    <PostContext.Provider value={{ getPosts, getPost, getPostByUserId,createPostMutation, deletePostMutation, updatePostStateMutation,posts, post }}>
       {children}
     </PostContext.Provider>
   )

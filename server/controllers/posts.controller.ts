@@ -25,10 +25,10 @@ export const getPost = async (req: Request, res: Response) => {
 }
 
 export const getPostById = async (req: Request, res: Response) => {
-  const {id} = req.params;
+  const {idUser} = req.params;
   try {
-    const idPost = id as unknown as ObjectId;
-    const post = await Posts.findById(idPost);
+    const idPost = idUser as unknown as ObjectId;
+    const post = await Posts.find({authorId: idPost});
     if (!post) return res.status(404).json("Post not found");
     res.json(post);
   } catch (error) {

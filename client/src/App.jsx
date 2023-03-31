@@ -10,6 +10,7 @@ import PageProtected from "./pages/PageProtected"
 import PageNotes from "./pages/PageNotes"
 import { useEffect } from "react"
 import { useAuth } from "./context/AuthContext"
+import PageUser from "./pages/PageUser"
 
 function App() {
   const navigate  = useNavigate()
@@ -29,6 +30,7 @@ function App() {
             <Route path="/profile" element={<PageProfile />} />
             <Route path="/notes" element={<PageNotes />} />
             <Route path="/dashboard" element={<PageDashboard />} />
+            <Route path="/user/:id" element={<PageUser />} />
           </Route>
         </Route>
         <Route path="/*" element={<PageNotFound />} />

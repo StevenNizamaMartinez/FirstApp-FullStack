@@ -7,7 +7,7 @@ import { getUserRequest, getUsersRequest } from "../app/usersApi";
 export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
   const navigate = useNavigate()
 
   const getUsers = () => {
@@ -15,7 +15,6 @@ const UserProvider = ({ children }) => {
       queryKey: ["users"],
       queryFn: getUsersRequest,
       onSuccess: (data) => {
-        console.log(data)
       },
       onError: (error) => {
         console.log(error);

@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
     onSuccess: (data) => {
       console.log(data);
       localStorage.setItem("token", data)
+      toast.dismiss()
       setToken(data)
       toast.success("Usuario logeado con éxito")
       navigate("/profile")
@@ -30,6 +31,7 @@ const AuthProvider = ({ children }) => {
     mutationKey: ["user"],
     mutationFn: registerRequest,
     onSuccess: (data) => {
+      toast.dismiss()
       console.log(data);
       localStorage.setItem("token", data)
       setToken(data)
@@ -47,6 +49,7 @@ const AuthProvider = ({ children }) => {
     mutationFn: logoutRequest,
     onSuccess: (data) => {
       console.log(data);
+      toast.dismiss()
       toast.success("Hasta Luego :)")
       localStorage.removeItem("token")
       navigate("/")

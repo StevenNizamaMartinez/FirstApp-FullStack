@@ -101,7 +101,7 @@ export const logout = (req: Request, res: Response) => {
 };
 
 // Define una función asíncrona para buscar un usuario por su ID y obtener el rol correspondiente
-const obtainRol = async (usuarioId:ObjectId) => {
+export const obtainRol = async (usuarioId:ObjectId) => {
   try {
     const rol = await Users.findById(usuarioId).populate('rolId');
     return rol?.rolId.rol // Imprime el nombre del rol
