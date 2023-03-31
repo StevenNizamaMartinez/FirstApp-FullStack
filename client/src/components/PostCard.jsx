@@ -9,9 +9,9 @@ import 'react-toggle/style.css'
 function PostCard({ post }) {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { deletePostMutation,updatePostStateMutation } = usePost()
+  const { deletePostMutation, updatePostStateMutation } = usePost()
 
-  const handleChange = (id,e) => {
+  const handleChange = (id, e) => {
     console.log(e.target.checked)
     updatePostStateMutation.mutate(id)
   }
@@ -23,15 +23,26 @@ function PostCard({ post }) {
       {
         !id && <ButtonDelete id={post._id} action={deletePostMutation} />
       }
-      <div className="toggle"  onClick={(e) => e.stopPropagation()}>
-        <Toggle
-        className='toggle--button'
-          icons={false}
-          checked={post?.done}
-          onChange={(e)=>handleChange(post?._id,e)}
-        />
-        <span>{post?.done ? "Completed" : "Pending"}</span>
-      </div>
+      {
+        !id ?
+          <div className="toggle" onClick={(e) => e.stopPropagation()}>
+            <Toggle
+              className='toggle--button'
+              icons={false}
+              checked={post?.done}
+              onChange={(e) => handleChange(post?._id, e)}
+            />
+            <span>{post?.done ? "Completed" : "Pending"}</span>
+          </div> :
+          <div className="toggle" onClick={(e) => e.stopPropagation()}>
+          <Toggle
+            className='toggle--button'
+            icons={false}
+            checked={post?.done}
+          />
+          <span>{post?.done ? "Completed" : "Pending"}</span>
+        </div>
+      }
 
     </div>
   )
