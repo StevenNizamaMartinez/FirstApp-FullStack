@@ -46,7 +46,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             secure: true,
             sameSite: "none",
             maxAge: 1000 * 60 * 60 * 24,
-            domain: "notes-app-stevennizama.netlify.app/", // Dominio del sitio web
+            domain: "https://stevennizama.onrender.com", // Dominio del servidor
         });
         res.json(token);
     }
@@ -98,7 +98,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             secure: true,
             sameSite: "none",
             maxAge: 1000 * 60 * 60 * 24,
-            domain: "notes-app-stevennizama.netlify.app/", // Dominio del sitio web
+            domain: "https://stevennizama.onrender.com", // Dominio del servidor
         });
         res.json(token);
     }
