@@ -12,7 +12,7 @@ const UserProvider = ({ children }) => {
 
   const getUsers = () => {
     const users = useQuery({
-      queryKey: ["users"],
+      queryKey: ["usersData"],
       queryFn: getUsersRequest,
       onSuccess: (data) => {
       },
@@ -25,7 +25,7 @@ const UserProvider = ({ children }) => {
 
   const getUser = () => {
     const users = useQuery({
-      queryKey: ["users"],
+      queryKey: ["userData"],
       queryFn: getUserRequest,
       onSuccess: (data) => {
         setUser(data)

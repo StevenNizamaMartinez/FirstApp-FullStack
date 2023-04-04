@@ -11,7 +11,6 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
   
   const loginMutate = useMutation({
-    mutationKey: ["user"],
     mutationFn: loginRequest,
     onSuccess: (data) => {
       console.log(data);
@@ -29,7 +28,6 @@ const AuthProvider = ({ children }) => {
   })
 
   const registerMutate = useMutation({
-    mutationKey: ["user"],
     mutationFn: registerRequest,
     onSuccess: (data) => {
       toast.dismiss()
@@ -46,7 +44,6 @@ const AuthProvider = ({ children }) => {
   })
 
   const logoutMutation = useMutation({
-    mutationKey: ["user"],
     mutationFn: logoutRequest,
     onSuccess: (data) => {
       console.log(data);

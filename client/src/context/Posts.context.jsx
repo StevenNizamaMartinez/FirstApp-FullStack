@@ -43,7 +43,7 @@ const PostProvider = ({ children }) => {
 
   const getPostByUserId = (id) => {
     const users = useQuery({
-      queryKey: ["post",id],
+      queryKey: ["postId",id],
       queryFn: getPostByUserIdRequest,
       onSuccess: (data) => {
         setPost(data)
