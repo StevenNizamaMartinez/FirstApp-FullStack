@@ -12,7 +12,7 @@ export const handleAuth = async (
   next: NextFunction
 ) => {
   const cookies = req.cookies;
-  if (!cookies.token) return res.status(401).json("Unauthorized cookies");
+  if (!cookies.token) return res.status(403).json("Unauthorized cookies");
   const cookieParse = cookie.parse(cookies.token);
   const { token } = cookieParse;
   try {

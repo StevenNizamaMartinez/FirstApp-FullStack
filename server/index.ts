@@ -1,7 +1,7 @@
 import app from "./app";
 import db from "./database/db";
 import { PORT } from "./libs/config";
-import { handleAuth, handleRol, handleUser } from "./middlewares/auth.middleware";
+import { handleAuth} from "./middlewares/auth.middleware";
 import authRouter from "./routes/auth.routes";
 import postsRouter from "./routes/posts.routes";
 import usersRouter from "./routes/users.routes";

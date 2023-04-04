@@ -19,7 +19,7 @@ const config_1 = require("../libs/config");
 const handleAuth = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const cookies = req.cookies;
     if (!cookies.token)
-        return res.status(401).json("Unauthorized cookies");
+        return res.status(403).json("Unauthorized cookies");
     const cookieParse = cookie_1.default.parse(cookies.token);
     const { token } = cookieParse;
     try {
