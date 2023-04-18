@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.corsOptions = void 0;
-const allowedOrigins = ['http://localhost:5173', "https://kanban-app-psi.vercel.app"];
+const allowedOrigins = ['http://localhost:5173', "https://notes-app-stevennizama.netlify.app"];
 exports.corsOptions = {
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
