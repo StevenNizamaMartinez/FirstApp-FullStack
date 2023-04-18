@@ -14,7 +14,7 @@ function PageUser() {
 
   return (
     <main>
-      <h2 className='title'>Page User</h2>
+      <h2 className='title'>User</h2>
       <HandleQuery isError={isError} isLoading={isLoading}>
         <div className="post--container">
           {posts.length === 0 ? <h3>No posts</h3> :

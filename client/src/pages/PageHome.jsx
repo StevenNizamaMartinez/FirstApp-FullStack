@@ -13,7 +13,7 @@ function PageHome() {
 
   return (
     <main className='page--container'>
-      <h2 className='title'>PageHome</h2>
+      <h2 className='title'>Home</h2>
       <section className='home--container'>
         <h3>Aún no tienes una cuenta <NavLink to="/register">Registrate</NavLink></h3>
         <h3>Ya tienes una cuenta <NavLink to="/login">Inicia Sesión</NavLink></h3>

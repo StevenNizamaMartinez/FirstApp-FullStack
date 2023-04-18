@@ -7,7 +7,7 @@ function PageNotes() {
 
   return (
     <div>
-      <h2 className='title'>Page Notes</h2>
+      <h2 className='title'>Notes</h2>
       <section className="notes--container">
         <div className="post--form">
           <FormPost />

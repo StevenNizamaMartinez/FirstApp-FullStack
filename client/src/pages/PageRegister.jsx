@@ -4,7 +4,7 @@ import FormRegister from '../components/form/FormRegister'
 function PageRegister() {
   return (
     <main className='page--container'>
-      <h2 className='title'>Page Register</h2>
+      <h2 className='title'>Register</h2>
       <FormRegister/>
     </main>
   )

@@ -4,7 +4,7 @@ import UserCard from '../components/UserCard'
 function PageDashboard() {
   return (
     <main>
-      <h2 className='title'>Page Dashboard</h2>
+      <h2 className='title'>Dashboard</h2>
       <section>
         <UserCard/>
       </section>
