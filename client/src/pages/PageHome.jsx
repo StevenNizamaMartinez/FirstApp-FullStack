@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { toast } from 'react-hot-toast'
 
 function PageHome() {
   const { loginMutate } = useAuth()
@@ -9,6 +10,7 @@ function PageHome() {
       email: "prueba@gmail.com",
       password: "prueba"
     })
+    toast.loading(" Esto puede tomar unos segundos ...")
   }
 
   return (
