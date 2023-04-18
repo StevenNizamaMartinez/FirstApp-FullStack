@@ -4,10 +4,10 @@ import { useAuth } from "../../context/AuthContext"
 function FormLogin() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const { loginMutate } = useAuth()
+  const { loginMutate, loadingAuth, setLoadingAuth } = useAuth()
 
   const onSubmit = (data) => {
-    console.log(data)
+    setLoadingAuth(true)
     loginMutate.mutate(data)
   }
 
@@ -23,7 +23,7 @@ function FormLogin() {
         <input type="password" id="password" {...register("password", { required: true })} />
         {errors.password && <span className="form--error">Password is required</span>}
       </div>
-      <button>Login</button>
+      <ButtonForm loader={loadingAuth} text={"Sign Up"} textLoading={"Loading"} />
     </form>
   )
 }
